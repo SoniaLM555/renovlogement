@@ -1,0 +1,24 @@
+{# templates/realisation/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Réalisations{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Nos Réalisations</h1>
+    <div class="row">
+        {# Exemple de photos, vous pouvez ajouter vos propres photos ici #}
+        <div class="col-md-4">
+            <img src="{{ asset('images/realisation1.jpg') }}" class="img-fluid" alt="Réalisation 1">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ asset('images/realisation2.jpg') }}" class="img-fluid" alt="Réalisation 2">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ asset('images/realisation3.jpg') }}" class="img-fluid" alt="Réalisation 3">
+        </div>
+        <!-- Ajoutez d'autres images ici -->
+    </div>
+</div>
+{% endblock %}
