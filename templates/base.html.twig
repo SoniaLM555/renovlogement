@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html>
-	<head>
-    	<meta charset="UTF-8">
-    	<title>{% block title %}Welcome!{% endblock %}</title>
-    	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-    	{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-    	{% block stylesheets %}
-        	{{ encore_entry_link_tags('app') }}
-    	{% endblock %}
-    	{% block javascripts %}
-        	{{ encore_entry_script_tags('app') }}
-    	{% endblock %}
-	</head>
-	<body>
-    	{% block body %}
-        	<h1>Votre numéro porte-bonheur est le {{ number }}</h1>
-    	{% endblock %}
-	</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+
+    <body>
+        {# BARRE DE NAVIGATION #}
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Hello World !</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="nav navbar-right navbar-top-links">
+                        {% if app.user %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userOptions" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-user fa-fw"></i> Bonjour {{ app.user.username }} <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user" aria-labelledby="userOptions">
+                                    <li>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {% block body %}
+        {% endblock %}
+    </body>
 </html>
