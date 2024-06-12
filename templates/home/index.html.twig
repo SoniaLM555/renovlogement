@@ -1,14 +1,19 @@
-{# templates/home/index.html.twig #}
+{% extends 'base.html.twig' %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
-    <h1>{{ title }}</h1>
-    <p>Bienvenue sur notre site web !</p>
-</body>
-</html>
+{% block title %}Karim Ladhari{% endblock %}
 
+{% block body %}
+<div class="container-fluid d-flex align-items-center justify-content-center " style="padding:0">
+    <div class="row justify-content-between " style="margin:0">
+  
+      <div class="col d-flex flex-column justify-content-between" style="padding:0;margin: 35px">
+  
+            <div class="card" style="background-color:rgba(65, 173, 252, 0.3);color:aliceblue ">
+                <div class="card-header text-center">
+                  <h4 class="h4" style="margin:0px"><strong> OBJECTIF PROFESSIONNEL</strong></h4>
+                </div>
+                <div class="card-body">
+                  <p class="card-text " style="font-size:14px">Chef de secteur expérimenté avec une solide expertise en gestion de rayons et d'équipes dans le domaine de la distribution spécialisée. Passionné par le commerce et la satisfaction client, je souhaite mettre mes compétences au service d’une entreprise dynamique où je pourrai contribuer à la croissance et à l’innovation. </p>
+                </div>
+            </div>
+{% endblock %}
