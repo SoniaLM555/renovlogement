@@ -1,46 +1,33 @@
+{# templates/base.html.twig #}
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Bienvenue !{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ path('app_homepage') }}">Renov'Logement</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_homepage') }}">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_services') }}">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_testimonials') }}">Témoignages</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        {% block stylesheets %}
-        {% endblock %}
+    <div class="content">
+        {% block body %}{% endblock %}
+    </div>
 
-        {% block javascripts %}
-        {% endblock %}
-    </head>
-
-    <body>
-        {# BARRE DE NAVIGATION #}
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">Hello World !</a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="nav navbar-right navbar-top-links">
-                        {% if app.user %}
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="userOptions" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-user fa-fw"></i> Bonjour {{ app.user.username }} <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user" aria-labelledby="userOptions">
-                                    <li>
-                                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        {% block body %}
-        {% endblock %}
-    </body>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</body>
 </html>
