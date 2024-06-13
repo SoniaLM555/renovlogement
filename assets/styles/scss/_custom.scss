@@ -2,12 +2,12 @@
 // Option A: Include all of Bootstrap
 
 // Include any default variable overrides here (though functions won't be available)
-
-$primary: #906427;
-$secondary: #B6AC97;
+$primary: #db1313;
+$secondary: #1f1707;
 $dark:#392C1E;
-$black:  #292222;
+$black:  #310303;
 $font-family-sans-serif: "Montserrat", sans-serif !default;
+
 
 
 
@@ -18,4 +18,137 @@ $font-family-sans-serif: "Montserrat", sans-serif !default;
 .realisation-img {
     width: 30px; 
     height: 20px; 
+}
+
+// assets/styles/app.scss
+
+// Import Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Custom styles
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #dd0a0a;
+    color: #fff;
+    padding: 1rem 0;
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+
+            li {
+                margin: 0 1rem;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .btn-primary {
+            background: #db1b1b;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    }
+}
+
+.hero {
+    background: url('../images/hero.jpg') no-repeat center center/cover;
+    color: #e61010;
+    text-align: center;
+    padding: 4rem 0;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .btn-secondary {
+        background: #010d18;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+}
+
+.services, .about-us, .testimonials {
+    padding: 2rem 0;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-cards, .about-us-content, .testimonials-slider {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .service-card, .about-us-card, .testimonial {
+        margin: 1rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .service-card img, .about-us-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+}
+
+footer {
+    background: #c70202;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+    }
 }

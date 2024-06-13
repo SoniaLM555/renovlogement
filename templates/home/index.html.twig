@@ -5,8 +5,60 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+<section class="hero">
     <div class="container">
-        <h1>Bienvenue chez Renov'Logement</h1>
-        <p>Votre expert en plomberie et rénovation de logements.</p>
+        <h1>Votre spécialiste en rénovation de logements et services de plomberie</h1>
+        <p>Nous transformons votre espace de vie avec des solutions innovantes et des services de dépannage 7j/7j.</p>
+        <a href="{{ path('app_services') }}" class="btn btn-secondary">Nos Services</a>
     </div>
+</section>
+
+<section class="services">
+    <div class="container">
+        <h2>Nos Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="{{ asset('images/service1.jpg') }}" alt="Service 1">
+                <h3>Rénovation de Logement</h3>
+                <p>Transformez votre maison ou appartement avec nos services de rénovation de qualité.</p>
+            </div>
+            <div class="service-card">
+                <img src="{{ asset('images/service2.jpg') }}" alt="Service 2">
+                <h3>Prestation de Plomberie</h3>
+                <p>Des installations de plomberie fiables et durables.</p>
+            </div>
+            <div class="service-card">
+                <img src="{{ asset('images/service3.jpg') }}" alt="Service 3">
+                <h3>Dépannage 7j/7j</h3>
+                <p>Services de maintenance et de réparation disponibles 7j/7j pour une plomberie sans soucis.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-us">
+    <div class="container">
+        <h2>À Propos de Nous</h2>
+        <div class="about-us-content">
+            <div class="about-us-card">
+                <img src="{{ asset('images/about-us.jpg') }}" alt="À Propos">
+                <p>Nous sommes une entreprise spécialisée dans la rénovation de logements et les services de plomberie. Notre équipe de professionnels est dédiée à fournir des services de haute qualité pour améliorer votre confort et votre satisfaction.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <div class="container">
+        <h2>Témoignages</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial">
+                <p>"Excellent service et résultats impeccables. Je recommande vivement!" - Client A</p>
+            </div>
+            <div class="testimonial">
+                <p>"Travail de qualité et équipe professionnelle. Très satisfait!" - Client B</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
