@@ -1,14 +1,15 @@
-// Custom.scss
-// Option A: Include all of Bootstrap
 
-// Include any default variable overrides here (though functions won't be available)
-$primary: #db1313;
-$secondary: #1f1707;
-$dark:#392C1E;
-$black:  #310303;
+
 $font-family-sans-serif: "Montserrat", sans-serif !default;
 
-
+$primary: #0c2642; // Primary color
+$secondary: #10f341; // Secondary color
+$success: #28a745; // Success color
+$info: #17a2b8; // Info color
+$warning: #ffc107; // Warning color
+$danger: #dc3545; // Danger color
+$light: #f8f9fa; // Light color
+$dark: #1c91b4; // Dark color
 
 
 @import "../node_modules/bootstrap/scss/bootstrap";
@@ -20,10 +21,11 @@ $font-family-sans-serif: "Montserrat", sans-serif !default;
     height: 20px; 
 }
 
-// assets/styles/app.scss
+.service-img {
+    width: 90px; 
+    height: 60px; 
+}
 
-// Import Bootstrap
-@import "~bootstrap/scss/bootstrap";
 
 // Custom styles
 body {
