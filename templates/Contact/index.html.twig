@@ -5,8 +5,39 @@
 {% block title %}Contact{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container mt-5">
         <h1>Contactez-nous</h1>
-        <p>Vous pouvez nous contacter via ce formulaire.</p>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {{ form_start(contactForm) }}
+            <div class="mb-3">
+                {{ form_label(contactForm.name) }}
+                {{ form_widget(contactForm.name, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(contactForm.name) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(contactForm.email) }}
+                {{ form_widget(contactForm.email, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(contactForm.email) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(contactForm.telephone) }}
+                {{ form_widget(contactForm.telephone, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(contactForm.telephone) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(contactForm.message) }}
+                {{ form_widget(contactForm.message, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(contactForm.message) }}
+            </div>
+            <div class="mb-3">
+                {{ form_widget(contactForm.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+            </div>
+        {{ form_end(contactForm) }}
     </div>
 {% endblock %}

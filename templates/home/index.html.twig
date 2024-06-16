@@ -1,49 +1,55 @@
 {# templates/home/index.html.twig #}
-
 {% extends 'base.html.twig' %}
 
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+
+
 <section class="hero">
     <div class="container">
-        <h1>Votre spécialiste en rénovation de logements et services de plomberie</h1>
-        <p>Nous transformons votre espace de vie avec des solutions innovantes et des services de dépannage 7j/7j.</p>
-        <a href="{{ path('app_services') }}" class="btn btn-secondary">Nos Services</a>
+        <h1>Bienvenue chez RénovLogement</h1>
+        <p>Nous offrons des services de rénovation de logements et de plomberie, avec un dépannage 7j/7j.</p>
+        <a href="{{ path('app_contact') }}" class="btn btn-secondary">Contactez-nous</a>
     </div>
 </section>
 
 <section class="about-us">
     <div class="container">
-        <h2>À Propos de Nous</h2>
+        <h2>À propos de nous</h2>
         <div class="about-us-content">
             <div class="about-us-card">
-                <img src="{{ asset('images/about-us.jpg') }}" class="service-img" alt="À Propos">
-                <p>Nous sommes une entreprise spécialisée dans la rénovation de logements et les services de plomberie. Notre équipe de professionnels est dédiée à fournir des services de haute qualité pour améliorer votre confort et votre satisfaction.</p>
+                <img src="{{ asset('images/about-us.jpg') }}" alt="About Us">
+                <p>Nous sommes une entreprise spécialisée dans la rénovation de logements et la prestation de services de plomberie. Notre équipe est dédiée à fournir des services de haute qualité pour satisfaire nos clients.</p>
             </div>
         </div>
     </div>
 </section>
 
-
 <section class="services">
     <div class="container">
         <h2>Nos Services</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <img src="{{ asset('images/service1.jpg') }}" class="service-img" alt="Service 1">
-                <h3>Rénovation de Logement</h3>
-                <p>Transformez votre maison ou appartement avec nos services de rénovation de qualité.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <img src="{{ asset('images/service1.jpg') }}" alt="Service 1">
+                    <h3>Rénovation de logements</h3>
+                    <p>Nous transformons votre logement pour qu'il soit exactement comme vous le souhaitez.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <img src="{{ asset('images/service2.jpg') }}" class="service-img" alt="Service 2">
-                <h3>Prestation de Plomberie</h3>
-                <p>Des installations de plomberie fiables et durables.</p>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <img src="{{ asset('images/service2.jpg') }}" alt="Service 2">
+                    <h3>Prestation de plomberie</h3>
+                    <p>Nous offrons des services de plomberie de qualité pour tous vos besoins.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <img src="{{ asset('images/service3.jpg') }}" class="service-img" alt="Service 3">
-                <h3>Dépannage 7j/7j</h3>
-                <p>Services de maintenance et de réparation disponibles 7j/7j pour une plomberie sans soucis.</p>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <img src="{{ asset('images/service3.jpg') }}" alt="Service 3">
+                    <h3>Dépannage 7j/7j</h3>
+                    <p>Nous sommes disponibles tous les jours pour des interventions rapides et efficaces.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -54,12 +60,85 @@
         <h2>Témoignages</h2>
         <div class="testimonials-slider">
             <div class="testimonial">
-                <p>"Excellent service et résultats impeccables. Je recommande vivement!" - Client A</p>
+                <p>"Excellents services! La rénovation de notre maison a été parfaite et le service de plomberie est impeccable. Je recommande vivement."</p>
+                <p>- Client satisfait</p>
             </div>
-            <div class="testimonial">
-                <p>"Travail de qualité et équipe professionnelle. Très satisfait!" - Client B</p>
+            <!-- Ajoutez plus de témoignages ici -->
+        </div>
+    </div>
+</section>
+
+<section class="réalisation">
+    <div class="container">
+        <h2>Nos réalisations</h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                {% for image in images %}
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ loop.index0 }}" class="{% if loop.first %}active{% endif %}" aria-current="{% if loop.first %}true{% endif %}" aria-label="Slide {{ loop.index }}"></button>
+                {% endfor %}
+            </div>
+            <div class="carousel-inner">
+                {% for image in images %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                        <img src="{{ asset('images/' ~ image) }}" class="d-block w-100" alt="Réalisation {{ loop.index }}">
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+<section class="contact">
+    <div class="container">
+        <h2>Contactez-nous</h2>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {{ form_start(contactForm) }}
+                <div class="form-group">
+                    {{ form_label(contactForm.name) }}
+                    {{ form_widget(contactForm.name, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.name) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(contactForm.email) }}
+                    {{ form_widget(contactForm.email, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.email) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(contactForm.telephone) }}
+                    {{ form_widget(contactForm.telephone, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.telephone) }}
+                </div>                
+                <div class="form-group">
+                    {{ form_label(contactForm.message) }}
+                    {{ form_widget(contactForm.message, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.message) }}
+                </div>
+                <div class="form-group">
+                    {{ form_widget(contactForm.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+                </div>
+                {{ form_end(contactForm) }}
             </div>
         </div>
     </div>
 </section>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="{{ path('app_home') }}">Accueil</a>
+            <a href="{{ path('app_testimonials') }}">Témoignages</a>
+            <a href="{{ path('app_contact') }}">Contact</a>
+        </div>
+    </div>
+</footer>
 {% endblock %}
