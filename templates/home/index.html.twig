@@ -6,7 +6,7 @@
 {% block body %}
 
 
-<section class="hero">
+<section class="hero"style="background-image: url('{{ asset('images/about-us.jpg') }}');">
     <div class="container">
         <h1>Bienvenue chez RénovLogement</h1>
         <p>Nous offrons des services de rénovation de logements et de plomberie, avec un dépannage 7j/7j.</p>
@@ -132,11 +132,6 @@
 </section>
 
 <footer>
-    <div class="container">
-        <div class="footer-links">
-            <a href="{{ path('app_home') }}">Accueil</a>
-            <a href="{{ path('app_contact') }}">Contact</a>
-        </div>
-    </div>
+    
 </footer>
 {% endblock %}
