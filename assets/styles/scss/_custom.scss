@@ -2,13 +2,13 @@
 
 
 
-$primary: #d60404; // Primary color
+$primary: red; // Primary color
 $secondary: #c5c2c2; // Secondary color
 $success: #03c531; // Success color
 $info: #f08c2e; // Info color
 $warning: #f58607; // Warning color
 $danger: #ff0000; // Danger color
-$light: #ad9797; // Light color
+$light: red; // Light color
 $dark: #000000; // Dark color
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
     padding-top: 0.5rem; // Réduire le padding en haut de la navbar
     padding-bottom: 0.5rem; // Réduire le padding en bas de la navbar
+    
 
 }
 
@@ -54,12 +55,15 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-nav .nav-item {
     margin-right: 70px; // espace entre les éléments de navigation
    
+
 }
 
 .nav-link {
     padding-top: 0.5rem; // Padding en haut du lien de navigation
-        padding-bottom: 0.5rem; // Padding en bas du lien de navigation
-        line-height: 1; // Ajuster la hauteur de ligne pour réduire la hauteur globale
+    padding-bottom: 0.5rem; // Padding en bas du lien de navigation
+    line-height: 1; // Ajuster la hauteur de ligne pour réduire la hauteur globale
+    color: #ffffff;
+        
 }
 .container-fluid {
     max-height: 80px; // Définir une hauteur maximale pour la container-fluid
@@ -78,3 +82,27 @@ h1 {
 h2 {
     font-size: 2.5rem; // Exemple de taille augmentée
 }
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #ff0000; /* Couleur du texte rouge au survol ou au focus */
+}
+
+.btn-primary {
+    background-color: $primary; // Fond rouge
+    color: #ffffff; // Texte blanc
+    border-color: $primary; // Bordure rouge
+
+    &:hover,
+    &:focus {
+        background-color: darken($primary, 30%); // Fond rouge plus sombre au survol
+        border-color: darken($primary, 30%); // Bordure plus sombre au survol
+        color: #ffffff; // Texte blanc au survol
+    }
+}
+
+.testimony{
+        font-style: italic;
+        font-weight: bold;
+}
+

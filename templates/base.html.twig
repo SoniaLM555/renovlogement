@@ -27,7 +27,7 @@
             {# <div class="collapse navbar-collapse" id="navbarNav"i> #}
             <div class="collapse navbar-collapse justify-content-end" id="navbarColor01">    
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ path('app_home') }}">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ path('app_contact') }}">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ path('app_realisations') }}">Réalisations</a></li>
                 </ul>
@@ -42,13 +42,12 @@
         <div class="container p-4">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-3 col-md-12 mb-4 mb-md-0 d-flex flex-column align-items-center">
-                    <img src="{{ asset('images/logo.png') }}" alt="Renov'Logement Logo" height="80" class="mb-2">
+                    <img src="{{ asset('images/logo.png') }}" alt="Renov'Logement Logo" height="80" class="mb-2" style="border-radius: 50%;">
                     <h5 class="text-uppercase">Renov'Logement</h5>
                     <p class="text-center">
                         Nous partageons votre projet!
                     </p>
                 </div>
-    
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0 d-flex flex-column align-items-center">
                     <h5 class="text-uppercase">Liens utiles</h5>
                     <ul class="list-unstyled mb-0 text-center">
@@ -57,7 +56,6 @@
                         <li><a href="{{ path('app_realisations') }}" class="text-dark">Réalisations</a></li>
                     </ul>
                 </div>
-    
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0 d-flex flex-column align-items-center">
                     <h5 class="text-uppercase">Suivez-nous</h5>
                     <ul class="list-unstyled mb-0 text-center">
@@ -68,7 +66,7 @@
             </div>
         </div>
     
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="text-center p-3 text-white" style="background-color: black;">
             © {{ "now"|date("Y") }} Renov'Logement. Tous droits réservés.
         </div>
     </footer>
