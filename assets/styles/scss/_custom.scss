@@ -2,155 +2,79 @@
 
 
 
-$primary: #f72929; // Primary color
-$secondary: #f02d13; // Secondary color
-$success: #28a745; // Success color
-$info: #17a2b8; // Info color
-$warning: #ffc107; // Warning color
-$danger: #9135dc; // Danger color
-$light: #f8f9fa; // Light color
-$dark: #1a0505; // Dark color
+$primary: #d60404; // Primary color
+$secondary: #c5c2c2; // Secondary color
+$success: #03c531; // Success color
+$info: #f08c2e; // Info color
+$warning: #f58607; // Warning color
+$danger: #ff0000; // Danger color
+$light: #ad9797; // Light color
+$dark: #000000; // Dark color
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$font-family-sans-serif: 'Red Hat Display', sans-serif;
+$body-font-family: $font-family-sans-serif;
+$body-font-size: 16px; // Augmenter cette valeur pour  police globale + grande
+$headings-font-family: $font-family-sans-serif;
+$headings-font-weight: 700;
 
 @import "~bootstrap/scss/bootstrap";
 
+//additional custom code 
 
-// Then add additional custom code here
-
-.realisation-img {
-    width: 30px; 
-    height: 20px; 
-}
-
-.service-img {
-    width: 90px; 
-    height: 60px; 
-}
 
 
 // Custom styles
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    font-family: $body-font-family;
+    font-size: $body-font-size;
 }
 
-header {
-    background: #dd0a0a;
-    color: #fff;
-    padding: 1rem 0;
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+}
+.navbar {
+    padding-top: 0.5rem; // Réduire le padding en haut de la navbar
+    padding-bottom: 0.5rem; // Réduire le padding en bas de la navbar
 
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .logo {
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-
-            li {
-                margin: 0 1rem;
-
-                a {
-                    color: #fff;
-                    text-decoration: none;
-                }
-            }
-        }
-
-        .btn-primary {
-            background: #db1b1b;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-    }
 }
 
-.hero {
-    background: url('../images/hero.jpg') no-repeat center center/cover;
-    color: #e61010;
-    text-align: center;
-    padding: 4rem 0;
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    p {
-        font-size: 1.2rem;
-    }
-
-    .btn-secondary {
-        background: #010d18;
-        color: #fff;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 5px;
-        text-decoration: none;
-    }
+.navbar-brand {
+    display: flex;
+    align-items: center; // Centrer verticalement le contenu de la navbar-brand
 }
 
-.services, .about-us, .testimonials {
-    padding: 2rem 0;
-
-    h2 {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service-cards, .about-us-content, .testimonials-slider {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .service-card, .about-us-card, .testimonial {
-        margin: 1rem;
-        padding: 1rem;
-        background: #f8f9fa;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        text-align: center;
-    }
-
-    .service-card img, .about-us-card img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 5px;
-    }
+.navbar-brand img {
+    height: 70px; // hauteur de l'image du logo
+    margin-bottom: 0; 
 }
 
-footer {
-    background: #c70202;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+.navbar-nav .nav-item {
+    margin-right: 70px; // espace entre les éléments de navigation
+   
+}
 
-    .footer-links {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1rem;
+.nav-link {
+    padding-top: 0.5rem; // Padding en haut du lien de navigation
+        padding-bottom: 0.5rem; // Padding en bas du lien de navigation
+        line-height: 1; // Ajuster la hauteur de ligne pour réduire la hauteur globale
+}
+.container-fluid {
+    max-height: 80px; // Définir une hauteur maximale pour la container-fluid
+    overflow: hidden; // Masquer le contenu dépassant de la container-fluid si nécessaire
+}
+.container-fluid {
+    max-height: 80px; // Définir une hauteur maximale pour la container-fluid
+    overflow: hidden; // Masquer le contenu dépassant de la container-fluid si nécessaire
+}
 
-        a {
-            color: #fff;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-    }
+// Taille des titres h1 et h2 augmentée
+h1 {
+    font-size: 3.5rem; // Exemple de taille augmentée
+}
+
+h2 {
+    font-size: 2.5rem; // Exemple de taille augmentée
 }
