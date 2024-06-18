@@ -6,7 +6,8 @@
  * which should already be in your base.html.twig.
  */
 import './styles/scss/main.css';
-import './bootstrap';
+import 'bootstrap/scss/bootstrap.scss';
+
 
 
 // Import necessary images
